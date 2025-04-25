@@ -56,6 +56,8 @@ public class GuiEnergyCrystal extends ModularGuiContainer<ContainerEnergyCrystal
         if (tile instanceof TileCrystalWirelessIO) {
             manager.add(new MGuiButtonSolid(this, "CLEAR_R", guiLeft + xSize - 150, guiTop + 14, 90, 12, I18n.format("eNet.de.clearReceivers.gui")).setColours(0xFF000000, 0xFFFF0000, 0xFF400090), 1);
         }
+// TODO: Look into toggle FX button
+//        manager.add(new MGuiButtonSolid(this, "TOGGLE_FX", guiLeft + xSize - 60, guiTop + 28, 90, 12, I18n.format("eNet.de.toggleFX.gui")).setColours(0xFF000000, 0xFFFF0000, 0xFF400090), 1);
         manager.initElements();
     }
 

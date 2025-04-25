@@ -2,6 +2,7 @@ package com.brandon3055.draconicevolution.blocks.energynet.rendering;
 
 import com.brandon3055.brandonscore.client.particle.BCEffectHandler;
 import com.brandon3055.brandonscore.lib.Vec3D;
+import com.brandon3055.draconicevolution.DEConfig;
 import com.brandon3055.draconicevolution.api.ICrystalLink;
 import com.brandon3055.draconicevolution.blocks.energynet.tileentity.TileCrystalWirelessIO;
 import com.brandon3055.draconicevolution.client.handler.ClientEventHandler;
@@ -39,7 +40,7 @@ public class ENetFXHandlerClientWireless extends ENetFXHandler<TileCrystalWirele
                 BCEffectHandler.spawnGLParticle(staticFX.getFXHandler(), staticFX);
             }
             staticFX.updateFX(0.5F);
-            staticFX.renderEnabled = renderCooldown > 0;
+            staticFX.renderEnabled = DEConfig.useCrystalFX && renderCooldown > 0;
         }
         if (renderCooldown > 0) {
             renderCooldown--;

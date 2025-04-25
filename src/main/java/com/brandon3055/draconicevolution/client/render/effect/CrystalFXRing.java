@@ -2,6 +2,7 @@ package com.brandon3055.draconicevolution.client.render.effect;
 
 import codechicken.lib.render.state.GlStateTracker;
 import com.brandon3055.brandonscore.client.particle.IGLFXHandler;
+import com.brandon3055.draconicevolution.DEConfig;
 import com.brandon3055.draconicevolution.blocks.energynet.EnergyCrystal;
 import com.brandon3055.draconicevolution.blocks.energynet.tileentity.TileCrystalBase;
 import com.brandon3055.draconicevolution.client.DEParticles;
@@ -46,7 +47,7 @@ public class CrystalFXRing extends CrystalGLFXBase<TileCrystalBase> {
 
     @Override
     public void renderParticle(BufferBuilder vertexbuffer, Entity entity, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
-        if (!renderEnabled) {
+        if (!renderEnabled || !DEConfig.useCrystalFX) {
             return;
         }
 

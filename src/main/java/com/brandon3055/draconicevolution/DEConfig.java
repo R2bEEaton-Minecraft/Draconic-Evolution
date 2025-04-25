@@ -213,6 +213,18 @@ public class DEConfig implements IModConfigHelper {
     @ModConfigProperty(category = "Tweaks", name = "chaoticWirelessMaxTransfer", comment = "This allows you to adjust the maximum transfer rate of the Chaotic Wireless Energy Crystal.")
     public static int chaoticWirelessMaxTransfer = 2048000;
 
+    @ModConfigProperty(category = "Tweaks", name = "basicCrystalMaxCap", comment = "This allows you to adjust the maximum capacity of the Basic Energy Crystal.")
+    public static int basicCrystalMaxCap = 4000000;
+
+    @ModConfigProperty(category = "Tweaks", name = "wyvernCrystalMaxCap", comment = "This allows you to adjust the maximum capacity of the Wyvern Energy Crystal.")
+    public static int wyvernCrystalMaxCap = 16000000;
+
+    @ModConfigProperty(category = "Tweaks", name = "draconicCrystalMaxCap", comment = "This allows you to adjust the maximum capacity of the Draconic Energy Crystal.")
+    public static int draconicCrystalMaxCap = 64000000;
+
+    @ModConfigProperty(category = "Tweaks", name = "chaoticCrystalMaxCap", comment = "This allows you to adjust the maximum capacity of the Chaotic Energy Crystal.")
+    public static int chaoticCrystalMaxCap = 256000000;
+
     @ModConfigProperty(category = "Tweaks", name = "guardianCanKillCreative", comment = "Set to false if you dont want the guardian to be able to kill creative players.\nAlternatively... Just dont poke the guardian if you dont want to die!")
     public static boolean guardianCanKillCreative = true;
 
@@ -236,8 +248,11 @@ public class DEConfig implements IModConfigHelper {
     @ModConfigProperty(category = "Client Settings", name = "useShaders", comment = "Set this to false if your system can not handle the awesomeness that is shaders! (Warning: Will make cool things look horrible!)")
     public static boolean useShaders = true;
 
-    @ModConfigProperty(category = "Client Settings", name = "useCrystalShaders", comment = "This allows you to disable just the Energy Crystal shader. This shader can be a lot lagier than the reactor's shader since there are usually a lot more of them (The fallback crystal texture is not soooo bad...).")
+    @ModConfigProperty(category = "Client Settings", name = "useCrystalShaders", comment = "This allows you to disable just the Energy Crystal shader. This shader can be a lot laggier than the reactor's shader since there are usually a lot more of them (The fallback crystal texture is not soooo bad...).")
     public static boolean useCrystalShaders = true;
+
+    @ModConfigProperty(category = "Client Settings", name = "useCrystalFX", comment = "This allows you to disable just the Energy Crystal FX. These are particles and beams related to Energy Crystals.")
+    public static boolean useCrystalFX = true;
 
     @ModConfigProperty(category = "Client Settings", name = "useReactorBeamShaders", comment = "Set this to false if you prefer the original look of the reactor beams.")
     public static boolean useReactorBeamShaders = true;

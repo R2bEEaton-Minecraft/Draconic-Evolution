@@ -7,6 +7,7 @@ import cofh.redstoneflux.impl.EnergyStorage;
 import com.brandon3055.brandonscore.blocks.TileBCBase;
 import com.brandon3055.brandonscore.lib.*;
 import com.brandon3055.brandonscore.utils.Utils;
+import com.brandon3055.draconicevolution.DEConfig;
 import com.brandon3055.draconicevolution.DEFeatures;
 import com.brandon3055.draconicevolution.DraconicEvolution;
 import com.brandon3055.draconicevolution.GuiHandler;
@@ -365,13 +366,13 @@ public abstract class TileCrystalBase extends TileBCBase implements ITilePlaceLi
     private int getCapacityForTier(int tier) {
         switch (tier) {
             case 0:
-                return 4000000;
+                return DEConfig.basicCrystalMaxCap;
             case 1:
-                return 16000000;
+                return DEConfig.wyvernCrystalMaxCap;
             case 2:
-                return 64000000;
+                return DEConfig.draconicCrystalMaxCap;
             case 3:
-                return 256000000;
+                return DEConfig.chaoticCrystalMaxCap;
         }
         return 0;
     }
