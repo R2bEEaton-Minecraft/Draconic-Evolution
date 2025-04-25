@@ -146,9 +146,9 @@ public class RenderTileEnergyCrystal extends TESRBase<TileCrystalBase> {
         }
     }
 
-    private static float[] r = {0.0F, 0.55F, 1.0F};
-    private static float[] g = {0.35F, 0.3F, 0.572F};
-    private static float[] b = {0.65F, 0.9F, 0.172F};
+    private static float[] r = {0.0F, 0.55F, 1.0F, 0.0F};
+    private static float[] g = {0.35F, 0.3F, 0.572F, 0.0F};
+    private static float[] b = {0.65F, 0.9F, 0.172F, 0.0F};
 
     public void bindShader(TileCrystalBase te, double x, double y, double z, float partialTicks, int tier) {
         BlockPos pos = te == null ? new BlockPos(0, 0, 0) : te.getPos();

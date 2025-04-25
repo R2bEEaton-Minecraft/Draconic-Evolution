@@ -86,7 +86,7 @@ public class ItemDraconiumBlock extends ItemBlockBCore {
         EntityPlayer player = Minecraft.getMinecraft().player;
 
 
-        if (player != null && (Minecraft.getMinecraft().player.inventory.hasItemStack(DEFeatures.wyvernCapacitor) || player.inventory.hasItemStack(DEFeatures.draconicCapacitor) || player.inventory.hasItemStack(DEFeatures.creativeCapacitor))) {
+        if (player != null && (Minecraft.getMinecraft().player.inventory.hasItemStack(DEFeatures.wyvernCapacitor) || player.inventory.hasItemStack(DEFeatures.draconicCapacitor) || player.inventory.hasItemStack(DEFeatures.creativeCapacitor) || player.inventory.hasItemStack(DEFeatures.chaoticCapacitor))) {
             list.add(format("info.de.draconiumBlockCapacitorCharge.txt"));
         }
     }

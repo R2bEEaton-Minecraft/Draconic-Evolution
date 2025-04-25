@@ -215,10 +215,11 @@ public class DEFeatures implements IModFeatures {
 
     //region Tools
 
-    @ModFeature(name = "draconium_capacitor", variantMap = {"0:type=wyvern", "1:type=draconic", "2:type=creative"}, cTab = 1)
+    @ModFeature(name = "draconium_capacitor", variantMap = {"0:type=wyvern", "1:type=draconic", "2:type=creative", "3:type=chaotic"}, cTab = 1)
     public static DraconiumCapacitor draconiumCapacitor = new DraconiumCapacitor();
     public static ItemStack wyvernCapacitor = new ItemStack(draconiumCapacitor, 1, 0);
     public static ItemStack draconicCapacitor = new ItemStack(draconiumCapacitor, 1, 1);
+    public static ItemStack chaoticCapacitor = new ItemStack(draconiumCapacitor, 1, 3);
     public static ItemStack creativeCapacitor = new ItemStack(draconiumCapacitor, 1, 2);
 
     @ModFeature(name = "wyvern_axe", cTab = 1)

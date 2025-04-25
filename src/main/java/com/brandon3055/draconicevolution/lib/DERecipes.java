@@ -3,6 +3,8 @@ package com.brandon3055.draconicevolution.lib;
 import com.brandon3055.draconicevolution.DEConfig;
 import com.brandon3055.draconicevolution.DEFeatures;
 import com.brandon3055.draconicevolution.items.ToolUpgrade;
+import net.foxmcloud.draconicadditions.DAFeatures;
+import net.foxmcloud.draconicadditions.lib.DARecipes;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -82,14 +84,19 @@ public class DERecipes {
         addFusion(NORMAL, new ItemStack(energyCrystal, 4, 2), new ItemStack(energyCrystal, 4, 1), 128000, 2, wyvernEnergyCore, "gemDiamond", wyvernCore, "gemDiamond", wyvernEnergyCore, wyvernEnergyCore, "gemDiamond", "gemDiamond", wyvernEnergyCore);
         addFusion(HARD, new ItemStack(energyCrystal, 4, 2), new ItemStack(energyCrystal, 4, 1), 512000, 2, wyvernEnergyCore, "gemDiamond", wyvernCore, "gemDiamond", wyvernEnergyCore, wyvernEnergyCore, "gemDiamond", draconicEnergyCore, "gemDiamond", wyvernEnergyCore);
 
+        addFusion(NORMAL, new ItemStack(energyCrystal, 4, 9), new ItemStack(energyCrystal, 4, 2), 512000, 3, DAFeatures.chaoticEnergyCore, "gemDiamond", chaoticCore, "gemDiamond", DAFeatures.chaoticEnergyCore, draconicEnergyCore, "gemDiamond", "gemDiamond", draconicEnergyCore);
+        addFusion(HARD, new ItemStack(energyCrystal, 4, 9), new ItemStack(energyCrystal, 4, 2), 2048000, 3, DAFeatures.chaoticEnergyCore, "gemDiamond", chaoticCore, "gemDiamond", DAFeatures.chaoticEnergyCore, draconicEnergyCore, "gemDiamond", DAFeatures.chaoticEnergyCore, "gemDiamond", draconicEnergyCore);
+
         //I/O
         addShapeless(ALL, new ItemStack(energyCrystal, 2, 3), new ItemStack(energyCrystal, 1, 0));
         addShapeless(ALL, new ItemStack(energyCrystal, 2, 4), new ItemStack(energyCrystal, 1, 1));
         addShapeless(ALL, new ItemStack(energyCrystal, 2, 5), new ItemStack(energyCrystal, 1, 2));
+        addShapeless(ALL, new ItemStack(energyCrystal, 2, 10), new ItemStack(energyCrystal, 1, 9));
 
         addShapeless(ALL, energyCrystal, new ItemStack(energyCrystal, 1, 3), new ItemStack(energyCrystal, 1, 3));
         addShapeless(ALL, new ItemStack(energyCrystal, 1, 1), new ItemStack(energyCrystal, 1, 4), new ItemStack(energyCrystal, 1, 4));
         addShapeless(ALL, new ItemStack(energyCrystal, 1, 2), new ItemStack(energyCrystal, 1, 5), new ItemStack(energyCrystal, 1, 5));
+        addShapeless(ALL, new ItemStack(energyCrystal, 1, 9), new ItemStack(energyCrystal, 1, 10), new ItemStack(energyCrystal, 1, 10));
 
         //Wireless
 
@@ -101,6 +108,9 @@ public class DERecipes {
 
         addShaped(NORMAL, new ItemStack(energyCrystal, 1, 8), "ABA", "CDC", "ABA", 'A', ENDER_PEARL, 'B', new ItemStack(particleGenerator, 1, 0), 'C', ENDER_EYE, 'D', new ItemStack(energyCrystal, 1, 2));
         addShaped(HARD, new ItemStack(energyCrystal, 1, 8), "ABA", "CDC", "ABA", 'A', draconicCore, 'B', new ItemStack(particleGenerator, 1, 0), 'C', ENDER_EYE, 'D', new ItemStack(energyCrystal, 1, 2));
+
+        addShaped(NORMAL, new ItemStack(energyCrystal, 1, 11), "ABA", "CDC", "ABA", 'A', ENDER_PEARL, 'B', new ItemStack(particleGenerator, 1, 0), 'C', ENDER_EYE, 'D', new ItemStack(energyCrystal, 1, 9));
+        addShaped(HARD, new ItemStack(energyCrystal, 1, 11), "ABA", "CDC", "ABA", 'A', draconicCore, 'B', new ItemStack(particleGenerator, 1, 0), 'C', ENDER_EYE, 'D', new ItemStack(energyCrystal, 1, 9));
 
         //endregion
 
@@ -210,6 +220,8 @@ public class DERecipes {
         addShaped(HARD, draconiumCapacitor, "ABA", "BCB", "ABA", 'A', "blockDraconium", 'B', wyvernEnergyCore, 'C', wyvernCore);
         addShaped(NORMAL, new ItemStack(draconiumCapacitor, 1, 1), "ABA", "CDC", "ACA", 'A', draconicEnergyCore, 'B', awakenedCore, 'C', "ingotDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 0));
         addShaped(HARD, new ItemStack(draconiumCapacitor, 1, 1), "ABA", "CDC", "ACA", 'A', draconicEnergyCore, 'B', awakenedCore, 'C', "blockDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 0));
+        addShaped(NORMAL, new ItemStack(draconiumCapacitor, 1, 3), "ABA", "CDC", "ACA", 'A', DAFeatures.chaoticEnergyCore, 'B', awakenedCore, 'C', "ingotDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 1));
+        addShaped(HARD, new ItemStack(draconiumCapacitor, 1, 3), "ABA", "CDC", "ACA", 'A', DAFeatures.chaoticEnergyCore, 'B', awakenedCore, 'C', "blockDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 1));
 
         addShaped(NORMAL, dislocator, "ABA", "BCB", "ABA", 'A', BLAZE_POWDER, 'B', "dustDraconium", 'C', ENDER_EYE);
         addShaped(HARD, dislocator, "ABA", "BCB", "ABA", 'A', BLAZE_POWDER, 'B', "dustDraconium", 'C', CHORUS_FLOWER);
@@ -295,7 +307,7 @@ public class DERecipes {
         }
 
         if (DEConfig.clearDataRecipes) {
-            for (int i = 0; i < 9; i++) {
+            for (int i = 0; i < 12; i++) {
                 addShapeless(ALL, new ItemStack(energyCrystal, 1, i), new ItemStack(energyCrystal, 1, i));
             }
             for (int i = 0; i < 4; i++) {

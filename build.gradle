@@ -31,6 +31,10 @@ repositories {
         name "JEI Maven."
         url "https://dvs1.progwml6.com/files/maven"
     }
+    maven {
+        name = 'GitHub Maven'
+        url = "https://jitpack.io"
+    }
 }
 
 // Define properties file
@@ -72,6 +76,8 @@ dependencies {
     compile "li.cil.oc:OpenComputers:${config.oc_version}:api"
     compile "mezz.jei:jei_${config.mc_version}:${config.jei_version}"
 	compile "cofh:RedstoneFlux:${config.rf_mc_version}-${config.rf_version}:deobf"
+    implementation files('libs/Draconic-Additions-1.12.2-1.17.0.45-universal.jar')
+    deobfCompile "com.github.azanor:Baubles:${config.baubles_version}"
 }
 
 processResources
@@ -101,7 +107,7 @@ def commonManifest = {
 
 
 jar {
-    classifier = 'universal'
+    classifier = 'universal-r2b'
     manifest commonManifest
 }
 

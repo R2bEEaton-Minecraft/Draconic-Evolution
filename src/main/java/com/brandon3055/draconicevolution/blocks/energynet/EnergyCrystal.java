@@ -53,7 +53,7 @@ import java.util.Locale;
 public class EnergyCrystal extends BlockBCore implements IRenderOverride, IRegistryOverride, IHudDisplay {
 
     public static final PropertyEnum<CrystalType> TYPE = PropertyEnum.create("type", CrystalType.class);
-    public static final PropertyInteger TIER = PropertyInteger.create("tier", 0, 2);
+    public static final PropertyInteger TIER = PropertyInteger.create("tier", 0, 3);
 
     public EnergyCrystal() {
         super(Material.GLASS);
@@ -63,6 +63,7 @@ public class EnergyCrystal extends BlockBCore implements IRenderOverride, IRegis
             for (int i = 0; i < 3; i++) {
                 addName((type.getIndex() * 3) + i, "energy_crystal." + type.name().toLowerCase(Locale.ENGLISH) + "." + (i == 0 ? "basic" : i == 1 ? "wyvern" : "draconic"));
             }
+            addName(type.getIndex() + 9, "energy_crystal." + type.name().toLowerCase(Locale.ENGLISH) + ".chaotic");
         }
     }
 
@@ -75,7 +76,7 @@ public class EnergyCrystal extends BlockBCore implements IRenderOverride, IRegis
 
     @Override
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 12; i++) {
             list.add(new ItemStack(this, 1, i));
         }
     }
@@ -215,24 +216,31 @@ public class EnergyCrystal extends BlockBCore implements IRenderOverride, IRegis
             this.index = index;
         }
 
+        // Index is the type of Crystal (Relay, IO, Wireless)
         public int getIndex() {
             return index;
         }
 
+        // Gets crystal type from index
         private static CrystalType fromIndex(int i) {
             return i == 0 ? RELAY : i == 1 ? CRYSTAL_IO : WIRELESS;
         }
 
+        // Gets crystal type from meta which is 0-11 of the different crystals.
+        // I added chaotic as 9-11 so as not to break existing crystals in the world.
+        // So I had to add custom logic for this.
         public static CrystalType fromMeta(int meta) {
-            return fromIndex(meta / 3);
+            return meta >= 9 ? fromIndex((meta - 9) % 3) : fromIndex(meta / 3);
         }
 
+        // Again custom logic getting the meta based on the tier and index. If the tier is 3 then it gets added at the end.
         public int getMeta(int tier) {
-            return (getIndex() * 3) + tier;
+            return tier >= 3 ? (tier * 3) + getIndex() : (getIndex() * 3) + tier;
         }
 
+        // Again custom logic for getting the tier based on the meta if >= 9
         public static int getTier(int meta) {
-            return meta % 3;
+            return meta >= 9 ? meta / 3 : meta % 3;
         }
 
         @Override

@@ -38,9 +38,9 @@ public class CrystalFXIO extends CrystalGLFXBase<TileCrystalBase> {
             setExpired();
         }
 
-        float[] r = {0.0F, 0.8F, 1.0F};
-        float[] g = {0.8F, 0.1F, 0.7F};
-        float[] b = {1F, 1F, 0.2F};
+        float[] r = {0.0F, 0.8F, 1.0F, 0.0F};
+        float[] g = {0.8F, 0.1F, 0.7F, 0.0F};
+        float[] b = {1F, 1F, 0.2F, 0.0F};
 
         particleRed = r[tile.getTier()];
         particleGreen = g[tile.getTier()];
@@ -69,12 +69,13 @@ public class CrystalFXIO extends CrystalGLFXBase<TileCrystalBase> {
 
     @Override
     public IGLFXHandler getFXHandler() {
-        return tile.getTier() == 0 ? BASIC_HANDLER : tile.getTier() == 1 ? WYVERN_HANDLER : DRACONIC_HANDLER;
+        return tile.getTier() == 0 ? BASIC_HANDLER : tile.getTier() == 1 ? WYVERN_HANDLER : tile.getTier() == 2 ? DRACONIC_HANDLER : CHAOTIC_HANDLER;
     }
 
     private static final FXHandler BASIC_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_BASIC);
     private static final FXHandler WYVERN_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_WYVERN);
     private static final FXHandler DRACONIC_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_DRACONIC);
+    private static final FXHandler CHAOTIC_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_CHAOTIC);
 
     public static class FXHandler implements IGLFXHandler {
 

@@ -61,9 +61,9 @@ public abstract class TileCrystalBase extends TileBCBase implements ITilePlaceLi
     private static Map<CrystalType, int[]> MAX_LINKS = new HashMap<>();
 
     static {
-        MAX_LINKS.put(CrystalType.RELAY, new int[]{8, 16, 32});
-        MAX_LINKS.put(CrystalType.CRYSTAL_IO, new int[]{2, 3, 4});
-        MAX_LINKS.put(CrystalType.WIRELESS, new int[]{4, 8, 16});
+        MAX_LINKS.put(CrystalType.RELAY, new int[]{8, 16, 32, 64});
+        MAX_LINKS.put(CrystalType.CRYSTAL_IO, new int[]{2, 3, 4, 6});
+        MAX_LINKS.put(CrystalType.WIRELESS, new int[]{4, 8, 16, 32});
     }
 
     //endregion
@@ -325,7 +325,9 @@ public abstract class TileCrystalBase extends TileBCBase implements ITilePlaceLi
             case 1:
                 return 64;
             case 2:
-                return 127;
+                return 128;
+            case 3:
+                return 256;
         }
         return 0;
     }
@@ -369,6 +371,8 @@ public abstract class TileCrystalBase extends TileBCBase implements ITilePlaceLi
                 return 16000000;
             case 2:
                 return 64000000;
+            case 3:
+                return 256000000;
         }
         return 0;
     }
@@ -437,7 +441,7 @@ public abstract class TileCrystalBase extends TileBCBase implements ITilePlaceLi
     }
 
     public String getUnlocalizedName() {
-        return "tile.draconicevolution:energy_crystal." + getType().getName() + "." + (getTier() == 0 ? "basic" : getTier() == 1 ? "wyvern" : "draconic") + ".name";
+        return "tile.draconicevolution:energy_crystal." + getType().getName() + "." + (getTier() == 0 ? "basic" : getTier() == 1 ? "wyvern" : getTier() == 2 ? "draconic" : "chaotic") + ".name";
     }
 
     //endregion

@@ -106,9 +106,9 @@ public class RenderItemEnergyCrystal implements IItemRenderer {
         return TransformUtils.DEFAULT_BLOCK;
     }
 
-    private static float[] r = {0.0F, 0.47F, 1.0F};
-    private static float[] g = {0.2F, 0.0F, 0.4F};
-    private static float[] b = {0.3F, 0.58F, 0.1F};
+    private static float[] r = {0.0F, 0.47F, 1.0F, 0.0F};
+    private static float[] g = {0.2F, 0.0F, 0.4F, 0.0F};
+    private static float[] b = {0.3F, 0.58F, 0.1F, 0.0F};
 
     public void bindShader(float partialTicks, int tier) {
         if (DEShaders.useShaders()) {

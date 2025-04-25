@@ -36,12 +36,15 @@ tile.draconicevolution:item_dislocation_inhibitor.name=Dislocation Normalization
 tile.draconicevolution:energy_crystal.relay.basic.name=Basic Energy Relay Crystal
 tile.draconicevolution:energy_crystal.relay.wyvern.name=Wyvern Energy Relay Crystal
 tile.draconicevolution:energy_crystal.relay.draconic.name=Draconic Energy Relay Crystal
+tile.draconicevolution:energy_crystal.relay.chaotic.name=Chaotic Energy Relay Crystal
 tile.draconicevolution:energy_crystal.crystal_io.basic.name=Basic Energy I/O Crystal
 tile.draconicevolution:energy_crystal.crystal_io.wyvern.name=Wyvern Energy I/O Crystal
 tile.draconicevolution:energy_crystal.crystal_io.draconic.name=Draconic Energy I/O Crystal
+tile.draconicevolution:energy_crystal.crystal_io.chaotic.name=Chaotic Energy I/O Crystal
 tile.draconicevolution:energy_crystal.wireless.basic.name=Basic Wireless Energy Crystal
 tile.draconicevolution:energy_crystal.wireless.wyvern.name=Wyvern Wireless Energy Crystal
 tile.draconicevolution:energy_crystal.wireless.draconic.name=Draconic Wireless Energy Crystal
+tile.draconicevolution:energy_crystal.wireless.chaotic.name=Chaotic Wireless Energy Crystal
 
 
 tile.draconicevolution:fusion_crafting_core.name=Fusion Crafting Core
@@ -101,6 +104,7 @@ item.draconicevolution:draconic_energy_core.name=Draconic Energy Core
 
 item.draconicevolution:draconium_capacitor.wyvern.name=Wyvern Flux Capacitor
 item.draconicevolution:draconium_capacitor.draconic.name=Draconic Flux Capacitor
+item.draconicevolution:draconium_capacitor.chaotic.name=Chaotic Flux Capacitor
 item.draconicevolution:draconium_capacitor.creative.name=Creative Flux Capacitor
 
 item.draconicevolution:draconic_ingot.name=Awakened Draconium Ingot

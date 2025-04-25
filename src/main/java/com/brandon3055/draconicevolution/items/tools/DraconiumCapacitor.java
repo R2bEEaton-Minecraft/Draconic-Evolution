@@ -45,10 +45,11 @@ public class DraconiumCapacitor extends ItemEnergyBase implements IInvCharge, IU
 
     public static final int wyvernTransfer = 8000000;
     public static final int draconicTransfer = 64000000;
+    public static final int chaoticTransfer = 512000000;
 
     public DraconiumCapacitor() {
         this.setHasSubtypes(true);
-        this.addName(0, "wyvern").addName(1, "draconic").addName(2, "creative");
+        this.addName(0, "wyvern").addName(1, "draconic").addName(2, "creative").addName(3, "chaotic");
         this.setMaxStackSize(1);
     }
 
@@ -82,6 +83,19 @@ public class DraconiumCapacitor extends ItemEnergyBase implements IInvCharge, IU
             subItems.add(uberDraconic);
 
             subItems.add(new ItemStack(DEFeatures.draconiumCapacitor, 1, 2));
+
+            // Chaotic
+            subItems.add(new ItemStack(DEFeatures.draconiumCapacitor, 1, 3));
+            ItemStack chaoticCharged = new ItemStack(DEFeatures.draconiumCapacitor, 1, 3);
+            setEnergy(chaoticCharged, getMaxEnergyStored(chaoticCharged));
+            subItems.add(chaoticCharged);
+
+            ItemStack uberChaotic = new ItemStack(DEFeatures.draconiumCapacitor, 1, 3);
+            for (String upgrade : getValidUpgrades(uberChaotic)) {
+                UpgradeHelper.setUpgradeLevel(uberChaotic, upgrade, getMaxUpgradeLevel(uberChaotic, upgrade));
+            }
+            setEnergy(uberChaotic, getCapacity(uberChaotic));
+            subItems.add(uberChaotic);
         }
     }
 
@@ -112,6 +126,15 @@ public class DraconiumCapacitor extends ItemEnergyBase implements IInvCharge, IU
                 return DEConfig.draconicFluxCapBaseCap + (upgrade * (DEConfig.draconicFluxCapBaseCap / 2));
             case 2:
                 return Integer.MAX_VALUE;
+            case 3:
+                int base = DEConfig.chaoticFluxCapBaseCap;
+                int increment;
+                try {
+                    increment = Math.multiplyExact(upgrade, base / 2);
+                    return Math.addExact(base, increment);
+                } catch (ArithmeticException e) {
+                    return Integer.MAX_VALUE;
+                }
         }
 
         return 0;
@@ -128,6 +151,8 @@ public class DraconiumCapacitor extends ItemEnergyBase implements IInvCharge, IU
                 return draconicTransfer;
             case 2:
                 return Integer.MAX_VALUE;
+            case 3:
+                return chaoticTransfer;
         }
 
         return 0;
@@ -144,6 +169,8 @@ public class DraconiumCapacitor extends ItemEnergyBase implements IInvCharge, IU
                 return draconicTransfer;
             case 2:
                 return Integer.MAX_VALUE;
+            case 3:
+                return chaoticTransfer;
         }
 
         return 0;
@@ -290,7 +317,7 @@ public class DraconiumCapacitor extends ItemEnergyBase implements IInvCharge, IU
 
     @Override
     public int getMaxUpgradeLevel(ItemStack stack, String upgrade) {
-        return stack.getItemDamage() == 0 ? 3 : stack.getItemDamage() == 1 ? 4 : 0;
+        return stack.getItemDamage() == 0 ? 3 : stack.getItemDamage() == 1 ? 4 : stack.getItemDamage() == 3 ? 5 : 0;
     }
 
     //endregion

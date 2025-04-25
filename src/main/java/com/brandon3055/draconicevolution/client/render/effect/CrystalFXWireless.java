@@ -124,12 +124,13 @@ public class CrystalFXWireless extends CrystalGLFXBase<TileCrystalWirelessIO> {
 
     @Override
     public IGLFXHandler getFXHandler() {
-        return tile.getTier() == 0 ? BASIC_HANDLER : tile.getTier() == 1 ? WYVERN_HANDLER : DRACONIC_HANDLER;
+        return tile.getTier() == 0 ? BASIC_HANDLER : tile.getTier() == 1 ? WYVERN_HANDLER : tile.getTier() == 2 ? DRACONIC_HANDLER : CHAOTIC_HANDLER;
     }
 
     private static final FXHandler BASIC_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_BASIC);
     private static final FXHandler WYVERN_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_WYVERN);
     private static final FXHandler DRACONIC_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_DRACONIC);
+    private static final FXHandler CHAOTIC_HANDLER = new FXHandler(DETextures.ENERGY_BEAM_CHAOTIC);
 
     public static class FXHandler implements IGLFXHandler {
 

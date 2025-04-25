@@ -35,9 +35,9 @@ public class CrystalFXRing extends CrystalGLFXBase<TileCrystalBase> {
             setExpired();
         }
 
-        float[] r = {0.0F, 0.8F, 1.0F};
-        float[] g = {0.8F, 0.1F, 0.7F};
-        float[] b = {1F, 1F, 0.2F};
+        float[] r = {0.0F, 0.8F, 1.0F, 0.5F};
+        float[] g = {0.8F, 0.1F, 0.7F, 0.5F};
+        float[] b = {1F, 1F, 0.2F, 0.5F};
 
         particleRed = r[tile.getTier()];
         particleGreen = g[tile.getTier()];

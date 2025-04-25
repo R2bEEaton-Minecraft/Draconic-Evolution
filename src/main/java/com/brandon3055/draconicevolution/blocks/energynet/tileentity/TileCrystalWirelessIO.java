@@ -175,7 +175,7 @@ public class TileCrystalWirelessIO extends TileCrystalBase {
     }
 
     public int getMaxWirelessTransfer() {
-        return getTier() == 0 ? DEConfig.basicWirelessMaxTransfer : getTier() == 1 ? DEConfig.wyvernWirelessMaxTransfer : DEConfig.draconicWirelessMaxTransfer;
+        return getTier() == 0 ? DEConfig.basicWirelessMaxTransfer : getTier() == 1 ? DEConfig.wyvernWirelessMaxTransfer : getTier() == 2 ? DEConfig.draconicWirelessMaxTransfer : DEConfig.chaoticWirelessMaxTransfer;
     }
 
     public int receiverTransfer(int index) {
@@ -255,7 +255,7 @@ public class TileCrystalWirelessIO extends TileCrystalBase {
     }
 
     public int getMaxReceivers() {
-        return getTier() == 0 ? 16 : getTier() == 1 ? 32 : 64;
+        return getTier() == 0 ? 16 : getTier() == 1 ? 32 : getTier() == 2 ? 64 : 128;
     }
 
     private void reCachePositions() {

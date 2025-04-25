@@ -198,6 +198,9 @@ public class DEConfig implements IModConfigHelper {
     @ModConfigProperty(category = "Tweaks", name = "draconicFluxCapBaseCap", comment = "This allows you to adjust the base capacity of the Draconic Flux Capacitor.")
     public static int draconicFluxCapBaseCap = 256000000;
 
+    @ModConfigProperty(category = "Tweaks", name = "chaoticFluxCapBaseCap", comment = "This allows you to adjust the base capacity of the Chaotic Flux Capacitor.")
+    public static int chaoticFluxCapBaseCap = 1024000000;
+
     @ModConfigProperty(category = "Tweaks", name = "basicWirelessMaxTransfer", comment = "This allows you to adjust the maximum transfer rate of the Basic Wireless Energy Crystal.")
     public static int basicWirelessMaxTransfer = 32000;
 
@@ -206,6 +209,9 @@ public class DEConfig implements IModConfigHelper {
 
     @ModConfigProperty(category = "Tweaks", name = "draconicWirelessMaxTransfer", comment = "This allows you to adjust the maximum transfer rate of the Draconic Wireless Energy Crystal.")
     public static int draconicWirelessMaxTransfer = 512000;
+
+    @ModConfigProperty(category = "Tweaks", name = "chaoticWirelessMaxTransfer", comment = "This allows you to adjust the maximum transfer rate of the Chaotic Wireless Energy Crystal.")
+    public static int chaoticWirelessMaxTransfer = 2048000;
 
     @ModConfigProperty(category = "Tweaks", name = "guardianCanKillCreative", comment = "Set to false if you dont want the guardian to be able to kill creative players.\nAlternatively... Just dont poke the guardian if you dont want to die!")
     public static boolean guardianCanKillCreative = true;
