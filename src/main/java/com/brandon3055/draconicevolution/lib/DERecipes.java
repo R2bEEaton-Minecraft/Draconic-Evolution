@@ -84,8 +84,8 @@ public class DERecipes {
         addFusion(NORMAL, new ItemStack(energyCrystal, 4, 2), new ItemStack(energyCrystal, 4, 1), 128000, 2, wyvernEnergyCore, "gemDiamond", wyvernCore, "gemDiamond", wyvernEnergyCore, wyvernEnergyCore, "gemDiamond", "gemDiamond", wyvernEnergyCore);
         addFusion(HARD, new ItemStack(energyCrystal, 4, 2), new ItemStack(energyCrystal, 4, 1), 512000, 2, wyvernEnergyCore, "gemDiamond", wyvernCore, "gemDiamond", wyvernEnergyCore, wyvernEnergyCore, "gemDiamond", draconicEnergyCore, "gemDiamond", wyvernEnergyCore);
 
-        addFusion(NORMAL, new ItemStack(energyCrystal, 4, 9), new ItemStack(energyCrystal, 4, 2), 512000, 3, DAFeatures.chaoticEnergyCore, "gemDiamond", chaoticCore, "gemDiamond", DAFeatures.chaoticEnergyCore, draconicEnergyCore, "gemDiamond", "gemDiamond", draconicEnergyCore);
-        addFusion(HARD, new ItemStack(energyCrystal, 4, 9), new ItemStack(energyCrystal, 4, 2), 2048000, 3, DAFeatures.chaoticEnergyCore, "gemDiamond", chaoticCore, "gemDiamond", DAFeatures.chaoticEnergyCore, draconicEnergyCore, "gemDiamond", DAFeatures.chaoticEnergyCore, "gemDiamond", draconicEnergyCore);
+        addFusion(NORMAL, new ItemStack(energyCrystal, 4, 9), new ItemStack(energyCrystal, 4, 2), 512000, 3, DAFeatures.chaoticEnergyCore, awakenedCore, chaoticCore, awakenedCore, DAFeatures.chaoticEnergyCore, draconicEnergyCore, awakenedCore, awakenedCore, draconicEnergyCore);
+        addFusion(HARD, new ItemStack(energyCrystal, 4, 9), new ItemStack(energyCrystal, 4, 2), 2048000, 3, DAFeatures.chaoticEnergyCore, "gemDiamond", chaoticCore, awakenedCore, DAFeatures.chaoticEnergyCore, draconicEnergyCore, awakenedCore, DAFeatures.chaoticEnergyCore, awakenedCore, draconicEnergyCore);
 
         //I/O
         addShapeless(ALL, new ItemStack(energyCrystal, 2, 3), new ItemStack(energyCrystal, 1, 0));
@@ -220,8 +220,8 @@ public class DERecipes {
         addShaped(HARD, draconiumCapacitor, "ABA", "BCB", "ABA", 'A', "blockDraconium", 'B', wyvernEnergyCore, 'C', wyvernCore);
         addShaped(NORMAL, new ItemStack(draconiumCapacitor, 1, 1), "ABA", "CDC", "ACA", 'A', draconicEnergyCore, 'B', awakenedCore, 'C', "ingotDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 0));
         addShaped(HARD, new ItemStack(draconiumCapacitor, 1, 1), "ABA", "CDC", "ACA", 'A', draconicEnergyCore, 'B', awakenedCore, 'C', "blockDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 0));
-        addShaped(NORMAL, new ItemStack(draconiumCapacitor, 1, 3), "ABA", "CDC", "ACA", 'A', DAFeatures.chaoticEnergyCore, 'B', awakenedCore, 'C', "ingotDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 1));
-        addShaped(HARD, new ItemStack(draconiumCapacitor, 1, 3), "ABA", "CDC", "ACA", 'A', DAFeatures.chaoticEnergyCore, 'B', awakenedCore, 'C', "blockDraconiumAwakened", 'D', new ItemStack(draconiumCapacitor, 1, 1));
+        addShaped(NORMAL, new ItemStack(draconiumCapacitor, 1, 3), "ABA", "EDE", "ACA", 'A', DAFeatures.chaoticEnergyCore, 'B', chaoticCore, 'C', DAFeatures.chaosHeart, 'D', new ItemStack(draconiumCapacitor, 1, 1), 'E', new ItemStack(chaosShard, 1, 1));
+        addShaped(HARD, new ItemStack(draconiumCapacitor, 1, 3), "ABA", "EDE", "ACA", 'A', DAFeatures.chaoticEnergyCore, 'B', chaoticCore, 'C', DAFeatures.chaosHeart, 'D', new ItemStack(draconiumCapacitor, 1, 1), 'E', new ItemStack(chaosShard, 1, 1));
 
         addShaped(NORMAL, dislocator, "ABA", "BCB", "ABA", 'A', BLAZE_POWDER, 'B', "dustDraconium", 'C', ENDER_EYE);
         addShaped(HARD, dislocator, "ABA", "BCB", "ABA", 'A', BLAZE_POWDER, 'B', "dustDraconium", 'C', CHORUS_FLOWER);

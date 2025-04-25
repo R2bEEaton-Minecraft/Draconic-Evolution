@@ -325,9 +325,8 @@ public abstract class TileCrystalBase extends TileBCBase implements ITilePlaceLi
             case 1:
                 return 64;
             case 2:
-                return 128;
             case 3:
-                return 256;
+                return 127;
         }
         return 0;
     }

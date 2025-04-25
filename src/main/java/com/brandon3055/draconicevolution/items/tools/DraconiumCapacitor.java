@@ -317,7 +317,7 @@ public class DraconiumCapacitor extends ItemEnergyBase implements IInvCharge, IU
 
     @Override
     public int getMaxUpgradeLevel(ItemStack stack, String upgrade) {
-        return stack.getItemDamage() == 0 ? 3 : stack.getItemDamage() == 1 ? 4 : stack.getItemDamage() == 3 ? 5 : 0;
+        return stack.getItemDamage() == 0 ? 3 : stack.getItemDamage() == 1 ? 4 : stack.getItemDamage() == 3 ? 4 : 0;
     }
 
     //endregion
