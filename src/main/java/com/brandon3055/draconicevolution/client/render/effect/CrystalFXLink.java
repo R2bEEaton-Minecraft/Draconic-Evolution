@@ -61,7 +61,7 @@ public class CrystalFXLink extends CrystalGLFXBase<TileCrystalBase> {
 
     @Override
     public void renderParticle(BufferBuilder buffer, Entity entity, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
-        if (!DEConfig.useCrystalFX) return;
+        if (!DEConfig.useCrystalFX && !ClientEventHandler.playerHoldingWrench) return;
 
         double scale = 0.1 + (timeout * 0.005);
         Vector3 source = new Vector3(posX - interpPosX, posY - interpPosY, posZ - interpPosZ);
