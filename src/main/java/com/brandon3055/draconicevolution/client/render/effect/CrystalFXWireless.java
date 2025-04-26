@@ -4,6 +4,7 @@ import codechicken.lib.math.MathHelper;
 import codechicken.lib.render.state.GlStateTracker;
 import codechicken.lib.vec.Vector3;
 import com.brandon3055.brandonscore.client.particle.IGLFXHandler;
+import com.brandon3055.draconicevolution.DEConfig;
 import com.brandon3055.draconicevolution.blocks.energynet.tileentity.TileCrystalWirelessIO;
 import com.brandon3055.draconicevolution.client.DEParticles;
 import com.brandon3055.draconicevolution.client.handler.ClientEventHandler;
@@ -86,6 +87,8 @@ public class CrystalFXWireless extends CrystalGLFXBase<TileCrystalWirelessIO> {
 
     @Override
     public void renderParticle(BufferBuilder buffer, Entity entity, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
+        if (!DEConfig.useCrystalFX) return;
+
         double scale = 0.08;// * powerLevel;
         boolean output = !tile.inputMode.value;
 

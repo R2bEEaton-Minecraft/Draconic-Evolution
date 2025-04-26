@@ -5,6 +5,7 @@ import codechicken.lib.render.state.GlStateTracker;
 import codechicken.lib.vec.Vector3;
 import com.brandon3055.brandonscore.client.particle.IGLFXHandler;
 import com.brandon3055.brandonscore.lib.Vec3D;
+import com.brandon3055.draconicevolution.DEConfig;
 import com.brandon3055.draconicevolution.blocks.energynet.tileentity.TileCrystalBase;
 import com.brandon3055.draconicevolution.blocks.energynet.tileentity.TileCrystalWirelessIO;
 import com.brandon3055.draconicevolution.client.handler.ClientEventHandler;
@@ -60,6 +61,8 @@ public class CrystalFXLink extends CrystalGLFXBase<TileCrystalBase> {
 
     @Override
     public void renderParticle(BufferBuilder buffer, Entity entity, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
+        if (!DEConfig.useCrystalFX) return;
+
         double scale = 0.1 + (timeout * 0.005);
         Vector3 source = new Vector3(posX - interpPosX, posY - interpPosY, posZ - interpPosZ);
         Vector3 target = linkTarget.toVector3().subtract(interpPosX, interpPosY, interpPosZ);
