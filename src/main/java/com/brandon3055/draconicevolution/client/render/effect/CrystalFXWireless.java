@@ -87,7 +87,7 @@ public class CrystalFXWireless extends CrystalGLFXBase<TileCrystalWirelessIO> {
 
     @Override
     public void renderParticle(BufferBuilder buffer, Entity entity, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
-        if (!DEConfig.useCrystalFX && !ClientEventHandler.playerHoldingWrench) return;
+        if (!DEConfig.useCrystalFX) return;
 
         double scale = 0.08;// * powerLevel;
         boolean output = !tile.inputMode.value;
