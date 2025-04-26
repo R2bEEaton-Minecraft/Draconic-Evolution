@@ -255,7 +255,7 @@ public class TileCrystalWirelessIO extends TileCrystalBase {
     }
 
     public int getMaxReceivers() {
-        return getTier() == 0 ? 16 : getTier() == 1 ? 32 : getTier() == 2 ? 64 : 128;
+        return getTier() == 0 ? 16 : getTier() == 1 ? 32 : getTier() == 2 ? 64 : 127;
     }
 
     private void reCachePositions() {
