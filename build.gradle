@@ -107,7 +107,7 @@ def commonManifest = {
 
 
 jar {
-    classifier = 'universal-r2b'
+    classifier = "universal-r2b${config.r2b_version}"
     manifest commonManifest
 }
 

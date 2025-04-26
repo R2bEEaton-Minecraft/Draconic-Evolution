@@ -7,6 +7,7 @@ import com.brandon3055.brandonscore.client.particle.IGLFXHandler;
 import com.brandon3055.brandonscore.lib.Vec3D;
 import com.brandon3055.brandonscore.utils.BCProfiler;
 import com.brandon3055.brandonscore.utils.Utils;
+import com.brandon3055.draconicevolution.DEConfig;
 import com.brandon3055.draconicevolution.api.ICrystalLink;
 import com.brandon3055.draconicevolution.api.IENetEffectTile;
 import com.brandon3055.draconicevolution.client.handler.ClientEventHandler;
@@ -70,9 +71,13 @@ public class CrystalFXBeam extends CrystalGLFXBase<IENetEffectTile> {
 
     @Override
     public void renderParticle(BufferBuilder buffer, Entity entity, float partialTicks, float rotationX, float rotationZ, float rotationYZ, float rotationXY, float rotationXZ) {
+        // Disable beam if setting is off and the player is not holding the wrench
+        if (!DEConfig.useCrystalFX && !ClientEventHandler.playerHoldingWrench) return;
+
         if (powerLevel <= 0 && !ClientEventHandler.playerHoldingWrench) {
             return;
         }
+
         BCProfiler.RENDER.start("crystal_beam_fx");
 
         double scale = 0.1 * powerLevel;
